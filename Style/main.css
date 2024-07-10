@@ -1,0 +1,811 @@
+/* Reset and global styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+:root {
+    /* --------------------------------------For Scroll Bar--------> */
+    --scrollbar-track-color: #000000;
+    --scrollbar-thumb-color: #5b595c;
+    --scrollbar-thumb-hover-color: #9b989d;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: black;
+}
+
+/* -----------------------For Scroll Bar------------->*/
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-color);
+    /* border-radius: 5px; */
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover-color);
+}
+
+/* ------------------------------------------- NAVBAR --------------- */
+header {
+    position: relative;
+}
+
+
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    font-weight: 900;
+
+}
+
+nav h2 a {
+    color: #e4e4e4;
+    text-decoration: none;
+    font-size: 30px;
+    text-shadow: #594c59 1px 1px;
+    margin-left: 20px;
+    transition: transform 0.1s ease-in;
+}
+
+nav h2 a:hover {
+    color: #3d3c3d;
+    transform: scale(1.1);
+    transition: transform 0.1s ease-in;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+#nav-links {
+    gap: 50px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav ul li {
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav ul li a:hover {
+    color: rgba(0, 0, 0, 0.845);
+    text-shadow: rgb(127, 127, 127) 0 0 5px;
+    text-decoration: underline;
+    text-decoration-color: rgb(52, 52, 52);
+    transition: all 0.3s ease;
+}
+
+/* -------------------------------------------------  HERO SECTION ------------------------------------ */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('../Assets/Background/IndinmeBackGround.jpg') no-repeat center center/cover;
+}
+
+/* Hero Overlay Styling */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgb(0, 0, 0, 1), rgb(0, 0, 0, 0.5));
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Main Hero Content Styling */
+/* ----------------- SEARCH BAR ----------------------------------------------------------------- */
+#search-form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#search-container {
+    display: flex;
+    width: 100%;
+}
+
+#search-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+}
+
+#search-input:focus {
+    outline: none;
+}
+
+#search-container:focus-within {
+    outline: 2px solid rgb(72, 0, 83);
+    border-radius: 5px;
+    z-index: 1;
+}
+
+#search-container>button {
+    background-color: #5c5a5a;
+    padding: 0 10px;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    font-weight: 700;
+}
+
+#search-container>button:hover {
+    background-color: #827f7f;
+
+}
+
+#search-button i {
+    font-size: 1.9em;
+    font-weight: bolder;
+    padding: 8px 10px;
+}
+
+/* ----------------------------------------- MAIN CONTENT ----------------------- */
+
+#main-logo {
+    display: inline-block;
+    font-size: 4em;
+    /* color: rgb(0, 0, 0); */
+    cursor: pointer;
+}
+
+#main-logo span {
+    transition: color 0.1s ease-in;
+}
+
+.main-hero {
+    color: #fff;
+    background: linear-gradient(to right, rgb(0, 0, 0, 1), rgb(0, 0, 0, 0.1));
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    text-align: left;
+    height: 100%;
+    max-width: 700px;
+    padding-left: 80px;
+    padding-top: 40px;
+}
+
+.main-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.main-hero h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.main-hero p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.main-hero p span>strong>a {
+    color: rgb(96, 2, 96);
+    text-decoration: none;
+    text-shadow: rgb(40, 1, 40) 1px 1px;
+}
+
+.main-hero p span>strong>a:hover {
+    text-decoration: underline;
+}
+
+/* ------------------------------------- ANIME SEARCH ----------------------------------- */
+
+legend{
+    border: 1px solid white;
+    text-align: center;
+}
+
+#anime-search {
+    max-width: 100%;
+    padding: 50px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url("../Assets/Background/02BackgroundBg.jpg") no-repeat center/contain;
+    overflow: hidden;
+    color: white;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.anime-news-flex legend {
+    font-size: 1.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+#search-results {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 700px;
+    gap: 20px;
+    justify-items: left;
+}
+
+.result-item {
+    background-color: rgba(68, 68, 68, 0.4);
+    padding: 5px;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(41, 41, 41, 0.9);
+}
+
+.result-item:hover {
+    border: 1px solid rgba(131, 131, 131, 0.9);
+}
+
+.result-item img {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.result-item h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.result-item a {
+    margin-top: auto;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.result-item a:hover {
+    background: rgba(0, 0, 0, 1);
+}
+
+/* ------------------------------- ANIME RECOMMENDATION ------------------------------------ */
+
+.anime-section {
+    max-width: 100%;
+    padding: 50px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url("../Assets/Background/Anime-bg.webp") no-repeat center/cover;
+    overflow: hidden;
+    color: white;
+    border-bottom: 1px solid #fff;
+}
+
+.anime-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 700px;
+    gap: 20px;
+    justify-items: left;
+}
+
+.anime-card {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    text-decoration: none;
+    color: #fff;
+}
+
+.anime-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s;
+}
+
+.anime-card .title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    text-align: center;
+    font-size: 1em;
+    z-index: 1;
+}
+
+.anime-card .info-hover {
+    position: absolute;
+    top: 0;
+    right: -200px;
+    width: 200px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 5px;
+    border: 1px solid rgb(104, 104, 104);
+    overflow: hidden;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, right 0.3s ease-in-out;
+    visibility: hidden;
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+.anime-card:hover .info-hover {
+    opacity: 1;
+    visibility: visible;
+    right: 0;
+}
+
+.anime-card:hover {
+    transform: scale(1.02);
+}
+
+.info-hover h3 {
+    margin: 10px 0;
+    font-size: 1em;
+}
+
+.info-hover p {
+    margin: 5px 0;
+    font-size: 0.8em;
+}
+
+.info-hover .genres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.info-hover .genre {
+    background: #007bff;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+/* ----------------------------------  WAIFU SECTION ------------------------------ */
+
+.waifu-section {
+    max-width: 100%;
+    padding: 50px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url("../Assets/Background/background-stars.avif") no-repeat center/cover;
+    overflow: hidden;
+    color: white;
+    border-bottom: 1px solid #fff;
+}
+
+.disclaimer {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #ffeb3b;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    text-wrap: wrap;
+    word-wrap: break-word;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    justify-items: center;
+}
+
+.image-grid a {
+    display: block;
+}
+
+.image-grid img {
+    max-width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+}
+
+.image-grid img:hover {
+    border: 2px solid #460048;
+}
+
+.explore-button {
+    background-color: #6200EE;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.explore-button:hover {
+    outline: 1px solid gray;
+    background-color: #3700B3;
+}
+
+/* --------------------------------------------------------- Footer Styles -------------------------------------------- */
+.footer {
+    background-color: #1a1a1a;
+    color: #f2f2f2;
+    padding: 50px 20px;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px 0;
+}
+
+.footer-left h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.footer-left p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.footer-left .social-icons {
+    margin-top: 20px;
+}
+
+.footer-left .social-icons a {
+    color: #f2f2f2;
+    margin-right: 10px;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.footer-left .social-icons a:hover {
+    color: #007bff;
+}
+
+.footer-center h3,
+.footer-right h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.footer-center ul,
+.footer-right ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-center ul li,
+.footer-right ul li {
+    margin-bottom: 10px;
+}
+
+.footer-center ul li a,
+.footer-right ul li a {
+    color: #f2f2f2;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-center ul li a:hover,
+.footer-right ul li a:hover {
+    color: #007bff;
+}
+
+.footer-right ul li {
+    display: flex;
+    align-items: center;
+}
+
+.footer-right ul li i {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* ---------------------------RESPONISVE DESIGN ------------------------- */
+
+@media (max-width: 768px) {
+
+    body {
+        background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url("../Assets/Background/background-stars.avif") no-repeat center/cover;
+        background-attachment: fixed;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    nav {
+        padding: 10px 0;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 30vh;
+        background-color: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-100%);
+        transition: transform 0.4s ease-in-out;
+    }
+
+    nav ul.active {
+        transform: translateY(0);
+    }
+
+    nav ul li {
+        margin: 20px 0;
+    }
+
+    #nav-links {
+        gap: 0;
+    }
+
+    .menu-icon.open .bar {
+        z-index: 1;
+        margin-right: 10px;
+    }
+
+    .menu-icon.open .bar:nth-child(1) {
+        transform: rotate(45deg) translate(10px, 5px);
+    }
+
+    .menu-icon.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-icon.open .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(10px, -5px);
+    }
+
+    /* -------------------------------- For Hero Section --------------------- */
+    .hero-overlay {
+        background: linear-gradient(to top, rgb(0, 0, 0, 1), rgb(0, 0, 0, 0.5));
+        display: flex;
+        align-items: end;
+        text-align: center;
+    }
+
+    .main-hero {
+        background: linear-gradient(to top, rgb(0, 0, 0, 1), rgb(0, 0, 0, 0.1));
+        margin-right: 0;
+        padding: 20px;
+        text-align: center;
+        height: 70%;
+        width: 100%;
+    }
+
+    .main-hero #main-logo {
+        font-size: 2rem;
+    }
+
+    .main-hero p {
+        font-size: 1rem;
+    }
+
+
+    /* Anime Search & News */
+    #search-input {
+        width: 250px;
+    }
+
+    #anime-search {
+        padding: 5px;
+        margin-bottom: 60px;
+    }
+
+    #search-results {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 300px;
+        gap: 5px;
+    }
+
+    .result-item {
+        background-color: transparent;
+        padding: 5px;
+        width: 160px;
+        overflow: hidden;
+    }
+
+    .result-item:hover {
+        border: 1px solid rgba(131, 131, 131, 0.9);
+    }
+
+    .result-item img {
+        width: 140px;
+        height: auto;
+        border-radius: 3px;
+    }
+
+    .result-item h3 {
+        margin-top: 10px;
+        margin-bottom: 1px;
+        font-size: 0.7em;
+    }
+
+    /* ------------------------------------ ANIME RECOMMENDATION ------------------------------- */
+
+    .anime-news-flex legend {
+        font-size: 1.2rem;
+    }
+
+    .anime-news-flex {
+        margin-bottom: 20px;
+    }
+
+    .anime-section {
+        padding: 0;
+        margin-bottom: 30px;
+    }
+
+    .anime-list {
+        max-width: 350px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px 5px;
+    }
+
+    .anime-card {
+        width: 165px;
+        height: 215px;
+    }
+
+    .anime-card .info-hover {
+        right: -165px;
+        width: 165px;
+    }
+
+    .anime-card:hover .info-hover {
+        right: 0;
+    }
+
+    .anime-card .title {
+        padding: 5px;
+        font-size: 0.8em;
+    }
+
+    .info-hover h3 {
+        font-size: 0.7em;
+    }
+
+    .info-hover p {
+        font-size: 0.6em;
+    }
+
+    .info-hover .genre {
+        font-size: 0.7em;
+    }
+
+    /* --------------------------- WAIFU SECTION --------------------------- */
+
+    .waifu-section {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .image-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 5px;
+    }
+
+    /* ----------------- FOOTER ------------------------------ */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+
+    .footer-right ul li {
+        justify-content: center;
+    }
+
+    .footer-left h2,
+    .footer-center h3,
+    .footer-right h3 {
+        margin-bottom: 5px;
+    }
+
+    .footer-left p {
+        margin-bottom: 10px;
+    }
+}
+
+/* ------------------------------- PRE-LOADER ------------------------------- */
+
+#pre-loader {
+    background: #0f0f0fb7 url(../Assets/Loader/IndinmeZone.gif) no-repeat center center;
+    background-size: 10%;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: 9999;
+}

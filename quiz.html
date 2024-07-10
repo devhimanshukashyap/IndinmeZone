@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Quizzes | Test Your Knowledge | Indinme Zone</title>
+    <meta name="description" content="Challenge yourself with fun and engaging anime quizzes at Indinme Zone. Test your knowledge on various anime series and characters.">
+    <meta name="keywords" content="anime quizzes, anime trivia, quiz, Indinme Zone">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        .search-container {
+            margin-bottom: 20px;
+        }
+
+        .quiz {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .question {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-top: 5px;
+        }
+
+        .btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+        }
+
+        .under-development {
+            color: red;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Anime Quiz</h1>
+        <div class="under-development">Disclamer:- This page is under development. The search functionality is not yet available. <br> and the result of your quiz is also not accurate cuz the page is still in under development!!!</div>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for Anime..." disabled>
+            <button id="searchBtn" class="btn" disabled>Search</button>
+        </div>
+        <div class="quiz" id="quiz"></div>
+        <button id="refreshBtn" class="btn">Refresh Quiz</button>
+        <button id="submitBtn" class="btn">Submit Answers</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        const quizContainer = document.getElementById('quiz');
+        const submitButton = document.getElementById('submitBtn');
+        const refreshButton = document.getElementById('refreshBtn');
+        const resultContainer = document.getElementById('result');
+        const searchButton = document.getElementById('searchBtn');
+        const searchInput = document.getElementById('searchInput');
+
+        refreshButton.addEventListener('click', () => {
+            clearResult();
+            fetchQuiz();
+        });
+
+        submitButton.addEventListener('click', () => {
+            calculateScore();
+        });
+
+        searchButton.addEventListener('click', () => {
+            clearResult();
+            fetchQuiz(searchInput.value);
+        });
+
+        function fetchQuiz(searchQuery = '') {
+            const apiUrl = searchQuery ? `https://opentdb.com/api.php?amount=10&category=31&difficulty=medium&search=${searchQuery}` : 'https://opentdb.com/api.php?amount=20&category=31&difficulty=medium';
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const quizData = data.results;
+                    showQuiz(quizData);
+                });
+        }
+
+        function showQuiz(quizData) {
+            let quizHTML = '';
+            quizData.forEach((question, index) => {
+                const options = [...question.incorrect_answers, question.correct_answer];
+                options.sort(() => Math.random() - 0.5);
+
+                quizHTML += `
+                <div class="question">
+                    <p>${index + 1}. ${question.question}</p>
+                    <ul>
+                        ${options.map(option => `<li><input type="radio" name="question${index}" value="${option}">${option}</li>`).join('')}
+                    </ul>
+                </div>`;
+            });
+            quizContainer.innerHTML = quizHTML;
+        }
+
+        function calculateScore() {
+            const questions = document.querySelectorAll('.question');
+            let correctAnswers = 0;
+            let wrongAnswers = 0;
+
+            questions.forEach(question => {
+                const selectedOption = question.querySelector('input:checked');
+                if (selectedOption && selectedOption.value === question.dataset.answer) {
+                    correctAnswers++;
+                } else {
+                    wrongAnswers++;
+                }
+            });
+
+            resultContainer.innerHTML = `
+            <p>Correct Answers: ${correctAnswers}</p>
+            <p>Wrong Answers: ${wrongAnswers}</p>`;
+        }
+
+        function clearResult() {
+            resultContainer.innerHTML = '';
+        }
+
+        fetchQuiz();
+    </script>
+</body>
+
+</html>

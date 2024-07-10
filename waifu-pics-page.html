@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waifu Images - Indinmezone Anime Characters Database, Quizzes, News & Updates | India</title>
+    <meta name="description"
+        content="Browse and download a wide variety of anime waifu images at Indinme Zone. Choose from different categories and enjoy high-quality pictures of your favorite anime girls.">
+    <meta name="keywords"
+        content="waifu images, anime waifu, anime girls, anime pictures, Indinme Zone, anime database, anime community">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../Style/waifu-pics.css">
+</head>
+
+<body>
+    <div id="pre-loader"></div>
+    <header>
+        <nav>
+            <h2><a href="index.html">IndinmeZone</a></h2>
+            <div class="menu-icon" id="menu-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul id="nav-links">
+                <li><a href="indinme-anime.html">Anime</a></li>
+                <li><a href="News.html">News</a></li>
+                <li><a href="indinmezone-store.html">Store</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="container">
+        <button id="filterBtn">Filter</button>
+        <fieldset class="anime-news-flex">
+            <p class="disclaimer">
+                <strong>Disclaimer:</strong> This gallery offers Ultra HD high-quality wallpapers. Due to the high
+                resolution, images may load slowly if you are on a slow network. Please be patient while the pictures
+                load for the best viewing experience.
+            </p>
+            <legend style="border: 1px solid white;">Cuties</legend>
+            <div id="image-grid"></div>
+        </fieldset>
+    </div>
+
+    <button id="refreshBtn">Refresh</button>
+
+    <div id="filterCard" class="hidden">
+        <div class="filterContent">
+            <span id="closeFilterCard">&times;</span>
+            <h2>Choose a Filter</h2>
+            <select id="filterSelect">
+                <option value="sfw/waifu">Waifu (SFW)</option>
+                <option value="sfw/neko">Neko (SFW)</option>
+                <option value="sfw/shinobu">Shinobu (SFW)</option>
+                <option value="sfw/megumin">Megumin (SFW)</option>
+                <option value="sfw/bully">Bully (SFW)</option>
+                <option value="sfw/cuddle">Cuddle (SFW)</option>
+                <option value="sfw/cry">Cry (SFW)</option>
+                <option value="sfw/hug">Hug (SFW)</option>
+                <option value="sfw/awoo">Awoo (SFW)</option>
+                <option value="sfw/kiss">Kiss (SFW)</option>
+                <option value="sfw/lick">Lick (SFW)</option>
+                <option value="sfw/pat">Pat (SFW)</option>
+                <option value="sfw/smug">Smug (SFW)</option>
+                <option value="sfw/bonk">Bonk (SFW)</option>
+                <option value="sfw/yeet">Yeet (SFW)</option>
+                <option value="sfw/blush">Blush (SFW)</option>
+                <option value="sfw/smile">Smile (SFW)</option>
+                <option value="sfw/wave">Wave (SFW)</option>
+                <option value="sfw/highfive">Highfive (SFW)</option>
+                <option value="sfw/handhold">Handhold (SFW)</option>
+                <option value="sfw/nom">Nom (SFW)</option>
+                <option value="sfw/bite">Bite (SFW)</option>
+                <option value="sfw/glomp">Glomp (SFW)</option>
+                <option value="sfw/slap">Slap (SFW)</option>
+                <option value="sfw/kill">Kill (SFW)</option>
+                <option value="sfw/kick">Kick (SFW)</option>
+                <option value="sfw/happy">Happy (SFW)</option>
+                <option value="sfw/wink">Wink (SFW)</option>
+                <option value="sfw/poke">Poke (SFW)</option>
+                <option value="sfw/dance">Dance (SFW)</option>
+                <option value="sfw/cringe">Cringe (SFW)</option>
+                <option value="nsfw/waifu">Waifu (NSFW)</option>
+                <option value="nsfw/neko">Neko (NSFW)</option>
+                <option value="nsfw/trap">Trap (NSFW)</option>
+                <option value="nsfw/blowjob">Blowjob (NSFW)</option>
+            </select>
+            <button id="applyFilterBtn">Apply Filter</button>
+        </div>
+    </div>
+
+    <div id="warningCard" class="hidden">
+        <div class="warningContent">
+            <span id="closeWarningCard">&times;</span>
+            <p>This content contains NSFW content. Are you old enough to see this?</p>
+            <button id="yesBtn">Yes</button>
+            <button id="noBtn">No</button>
+        </div>
+    </div>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h2>IndinmeZone</h2>
+                <p>Explore the world of anime with IndinmeZone! Stay updated with the latest news, reviews, and updates
+                    from the anime world.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-center">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="indinme-anime.html">Anime</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="indinmezone-store.html">Store</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <!-- <li><a href="about.html">About</a></li> -->
+                </ul>
+            </div>
+            <div class="footer-right">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> India</li>
+                    <li><i class="fas fa-phone"></i> +91 123-456-7890</li>
+                    <li><i class="fas fa-envelope"></i> indinmezone.net</li>
+                </ul>
+            </div>
+            <!-- <p>Total views: <span id="viewCount">0</span></p> -->
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 IndinmeZone. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="../Script/waifu-pics.js"></script>
+</body>
+
+</html>

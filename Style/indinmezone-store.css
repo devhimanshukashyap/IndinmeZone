@@ -1,0 +1,478 @@
+body {
+    margin: 80px 0 0;
+    font-family: 'Poppins';
+    background-color: #121212;
+    color: #ffffff;
+    background-image: url('../Assets/Background/background-stars.avif');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* ------------------------------------------- NAVBAR --------------- */
+header {
+    position: relative;
+}
+
+
+nav {
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    font-weight: 900;
+
+}
+
+nav h2 a {
+    color: #e4e4e4;
+    text-decoration: none;
+    font-size: 30px;
+    text-shadow: #594c59 1px 1px;
+    margin-left: 20px;
+    transition: transform 0.1s ease-in;
+}
+
+nav h2 a:hover {
+    color: #3d3c3d;
+    transform: scale(1.1);
+    transition: transform 0.1s ease-in;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+#nav-links {
+    gap: 50px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav ul li {
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav ul li a:hover {
+    color: rgba(0, 0, 0, 0.845);
+    text-shadow: rgb(127, 127, 127) 0 0 5px;
+    text-decoration: underline;
+    text-decoration-color: rgb(52, 52, 52);
+    transition: all 0.3s ease;
+}
+
+
+.search-bar {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.search-bar button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product {
+    background: #1f1f1f;
+    border: 1px solid #333;
+    border-radius: 8px;
+    width: 200px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+}
+
+.product h2 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.product p {
+    margin: 5px 0;
+}
+
+.product a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+.product a:hover {
+    text-decoration: underline;
+}
+
+.ad-space {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px dashed #ffffff;
+    width: 80%;
+    text-align: center;
+    margin: 20px 0;
+    padding: 10px;
+    font-size: 16px;
+    color: #ccc;
+}
+
+.loading {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 18px;
+    display: none;
+}
+
+/* --------------------------------------------------------- Footer Styles -------------------------------------------- */
+.footer {
+    background-color: #1a1a1a;
+    color: #f2f2f2;
+    padding: 50px 20px;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px 0;
+}
+
+.footer-left h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.footer-left p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.footer-left .social-icons {
+    margin-top: 20px;
+}
+
+.footer-left .social-icons a {
+    color: #f2f2f2;
+    margin-right: 10px;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.footer-left .social-icons a:hover {
+    color: #007bff;
+}
+
+.footer-center h3,
+.footer-right h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.footer-center ul,
+.footer-right ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-center ul li,
+.footer-right ul li {
+    margin-bottom: 10px;
+}
+
+.footer-center ul li a,
+.footer-right ul li a {
+    color: #f2f2f2;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-center ul li a:hover,
+.footer-right ul li a:hover {
+    color: #007bff;
+}
+
+.footer-right ul li {
+    display: flex;
+    align-items: center;
+}
+
+.footer-right ul li i {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+
+@media (max-width: 600px) {
+    .product {
+        width: 100%;
+    }
+
+    .search-bar input {
+        width: 70%;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #121212;
+        color: #ffffff;
+        background-image: url('../Assets/Background/background-stars.avif');
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+
+    .menu-icon {
+        display: flex;
+    }
+
+    nav {
+        padding: 10px 0;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 30vh;
+        background-color: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-100%);
+        transition: transform 0.4s ease-in-out;
+    }
+
+    nav ul.active {
+        transform: translateY(0);
+    }
+
+    nav ul li {
+        margin: 20px 0;
+    }
+
+    #nav-links {
+        gap: 0;
+    }
+
+    .menu-icon.open .bar {
+        z-index: 1;
+        margin-right: 10px;
+    }
+
+    .menu-icon.open .bar:nth-child(1) {
+        transform: rotate(45deg) translate(10px, 5px);
+    }
+
+    .menu-icon.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-icon.open .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(10px, -5px);
+    }
+
+    .search-bar {
+        margin: 20px auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .search-bar input {
+        width: 300px;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .search-bar button {
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    #results {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .product {
+        background: #1f1f1f;
+        border: 1px solid #333;
+        border-radius: 8px;
+        width: 200px;
+        overflow: hidden;
+        transition: transform 0.3s;
+        text-align: center;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .product:hover {
+        transform: scale(1.05);
+    }
+
+    .product img {
+        width: 100%;
+        height: auto;
+    }
+
+    .product h2 {
+        font-size: 16px;
+        margin: 10px 0;
+    }
+
+    .product p {
+        margin: 5px 0;
+    }
+
+    .product a {
+        color: #1e90ff;
+        text-decoration: none;
+    }
+
+    .product a:hover {
+        text-decoration: underline;
+    }
+
+    .ad-space {
+        background: rgba(0, 0, 0, 0.8);
+        border: 1px dashed #ffffff;
+        width: 80%;
+        text-align: center;
+        margin: 20px 0;
+        padding: 10px;
+        font-size: 16px;
+        color: #ccc;
+    }
+
+    .loading {
+        text-align: center;
+        margin: 20px 0;
+        font-size: 18px;
+        display: none;
+    }
+
+    /* ----------------- FOOTER ------------------------------ */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+
+    .footer-right ul li {
+        justify-content: center;
+    }
+
+    .footer-left h2,
+    .footer-center h3,
+    .footer-right h3 {
+        margin-bottom: 5px;
+    }
+
+    .footer-left p {
+        margin-bottom: 10px;
+    }
+}
+
+/* ------------------------------- PRE-LOADER ------------------------------- */
+
+#pre-loader {
+    background: #0f0f0fb7 url(../Assets/Loader/IndinmeZone.gif) no-repeat center center;
+    background-size: 10%;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: 9999;
+}

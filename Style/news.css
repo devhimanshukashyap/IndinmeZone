@@ -1,0 +1,430 @@
+/* Reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+:root {
+    /* --------------------------------------For Scroll Bar--------> */
+    --scrollbar-track-color: #0f0f0f;
+    --scrollbar-thumb-color: #5b595c;
+    --scrollbar-thumb-hover-color: #9b989d;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* -----------------------For Scroll Bar------------->*/
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-color);
+    /* border-radius: 5px; */
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover-color);
+}
+
+/* ------------------------------------------- NAVBAR --------------- */
+header {
+    position: relative;
+}
+
+
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    font-weight: 900;
+
+}
+
+nav h2 a {
+    color: #fffbfb;
+    text-decoration: none;
+    font-size: 30px;
+    text-shadow: #594c59 1px 1px;
+    margin-left: 20px;
+    transition: transform 0.1s ease-in;
+}
+
+nav h2 a:hover {
+    color: #3d3c3d;
+    transform: scale(1.1);
+    transition: transform 0.1s ease-in;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+#nav-links {
+    gap: 50px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav ul li {
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav ul li a:hover {
+    color: rgba(0, 0, 0, 0.845);
+    text-shadow: rgb(127, 127, 127) 0 0 5px;
+    text-decoration: underline;
+    text-decoration-color: rgb(52, 52, 52);
+    transition: all 0.3s ease;
+}
+
+body {
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url("../Assets/Background/anime-bg1.png") no-repeat center/cover;
+    background-attachment: fixed;
+}
+
+#anime-search {
+    max-width: 100%;
+    padding: 50px;
+    overflow: hidden;
+    color: white;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.anime-news-flex legend,
+.anime-articles-flex legend {
+    font-size: 1.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+#image-results,
+#article-results {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-height: auto;
+}
+
+.result-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    background-color: rgba(68, 68, 68, 0.4);
+    padding: 5px;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(41, 41, 41, 0.9);
+}
+
+.result-item:hover {
+    border: 1px solid rgba(131, 131, 131, 0.9);
+}
+
+.result-item img {
+    flex-shrink: 0;
+    width: auto;
+    height: 180px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.result-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.result-content h3 {
+    cursor: pointer;
+    margin-bottom: 10px;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.result-content a {
+    text-align: left;
+    color: #ffffff;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 5px;
+    display: inline-block;
+    max-width: fit-content;
+}
+
+.result-content a:hover {
+    background: rgba(0, 0, 0, 1);
+}
+
+.result-content p,
+.result-content span {
+    margin: 5px 0;
+}
+
+/* --------------------------------------------------------- Footer Styles -------------------------------------------- */
+.footer {
+    background-color: #1a1a1a;
+    color: #f2f2f2;
+    padding: 50px 20px;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px 0;
+}
+
+.footer-left h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.footer-left p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.footer-left .social-icons {
+    margin-top: 20px;
+}
+
+.footer-left .social-icons a {
+    color: #f2f2f2;
+    margin-right: 10px;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.footer-left .social-icons a:hover {
+    color: #007bff;
+}
+
+.footer-center h3,
+.footer-right h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.footer-center ul,
+.footer-right ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-center ul li,
+.footer-right ul li {
+    margin-bottom: 10px;
+}
+
+.footer-center ul li a,
+.footer-right ul li a {
+    color: #f2f2f2;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-center ul li a:hover,
+.footer-right ul li a:hover {
+    color: #007bff;
+}
+
+.footer-right ul li {
+    display: flex;
+    align-items: center;
+}
+
+.footer-right ul li i {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+@media (max-width: 786px) {
+
+    .menu-icon {
+        display: flex;
+    }
+
+    nav {
+        padding: 10px 0;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 30vh;
+        background-color: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-100%);
+        transition: transform 0.4s ease-in-out;
+    }
+
+    nav ul.active {
+        transform: translateY(0);
+    }
+
+    nav ul li {
+        margin: 20px 0;
+    }
+
+    #nav-links {
+        gap: 10px;
+    }
+
+    .menu-icon.open .bar {
+        z-index: 1;
+        margin-right: 10px;
+    }
+
+    .menu-icon.open .bar:nth-child(1) {
+        transform: rotate(45deg) translate(10px, 5px);
+    }
+
+    .menu-icon.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-icon.open .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(10px, -5px);
+    }
+
+    #anime-search {
+        padding: 5px;
+    }
+
+    #image-results,
+    #article-results {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+
+    .result-item {
+        flex-direction: column;
+        align-items: flex-start;
+        width: auto;
+    }
+
+    .result-item img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .result-content h3 {
+        font-size: 1em;
+        margin-bottom: 5px;
+    }
+
+    .result-content p,
+    .result-content span {
+        font-size: 0.8em;
+        margin: 5px 0;
+    }
+
+    /* ----------------- FOOTER ------------------------------ */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+
+    .footer-right ul li {
+        justify-content: center;
+    }
+
+    .footer-left h2,
+    .footer-center h3,
+    .footer-right h3 {
+        margin-bottom: 5px;
+    }
+
+    .footer-left p {
+        margin-bottom: 10px;
+    }
+}
+
+/* ------------------------------- PRE-LOADER ------------------------------- */
+
+#pre-loader {
+    background: #0f0f0fb7 url(../Assets/Loader/IndinmeZone.gif) no-repeat center center;
+    background-size: 10%;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: 9999;
+}
