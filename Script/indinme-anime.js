@@ -31,15 +31,10 @@ $(document).ready(function () {
                     <h3><a href="${anime.link}" class="anime-link">${anime.title}</a></h3>
                     <p>${anime.snippet}</p>
                 </div>
-                <h2>Myths Related to the Anime</h2>
-                <ul class="anime-myths">
-                    <li>Myth: [Myth about the anime]. <b>False</b></li>
-                    <li>Myth: [Another myth about the anime]. <b>True</b></li>
-                </ul>
                 <h2>Complete Information</h2>
                 <div class="anime-details">
                     <p>${anime.htmlSnippet}</p>
-                    <a href="${anime.link}" class="anime-link">Watch for free</a>
+                    <a href="${anime.link}" class="anime-link">Original Source</a>
                 </div>
             `;
             $('#anime-info').html(animeInfo);
