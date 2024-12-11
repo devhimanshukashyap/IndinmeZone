@@ -276,19 +276,19 @@ fetchImages();
 
 // ------------- View Counter --------------------------
 
-// document.addEventListener('DOMContentLoaded', (event) => {
-//     let viewCount = localStorage.getItem('viewCount');
+document.addEventListener('DOMContentLoaded', (event) => {
+    let viewCount = localStorage.getItem('viewCount');
 
-//     if (viewCount === null) {
-//         viewCount = 0;
-//     } else {
-//         viewCount = Number(viewCount);
-//     }
+    if (viewCount === null) {
+        viewCount = 0;
+    } else {
+        viewCount = Number(viewCount);
+    }
 
-//     viewCount++;
+    viewCount++;
 
-//     localStorage.setItem('viewCount', viewCount);
+    localStorage.setItem('viewCount', viewCount);
 
-//     document.getElementById('viewCount').textContent = viewCount;
-// });
+    document.getElementById('viewCount').textContent = viewCount;
+});
 
