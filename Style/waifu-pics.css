@@ -394,8 +394,8 @@ nav ul li a:hover {
     }
 }
 
-@media (max-width: 480px) {
-    .image-grid {
+@media screen and (max-width: 480px) {
+    #image-grid{
         column-count: 2;
     }
 }
