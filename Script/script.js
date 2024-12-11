@@ -249,7 +249,7 @@ async function fetchImages() {
         body: JSON.stringify({ exclude: [] })
     });
     const data = await response.json();
-    displayImages(data.files.slice(0, 10));
+    displayImages(data.files.slice(0, 12));
 }
 
 function displayImages(urls) {

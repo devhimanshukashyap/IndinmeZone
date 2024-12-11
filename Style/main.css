@@ -244,7 +244,7 @@ nav ul li a:hover {
 
 /* ------------------------------------- ANIME SEARCH ----------------------------------- */
 
-legend{
+legend {
     border: 1px solid white;
     text-align: center;
 }
@@ -445,22 +445,23 @@ legend{
 }
 
 .image-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 10px;
-    justify-items: center;
+    column-count: 4;
+    column-gap: 5px;
 }
 
 .image-grid a {
-    display: block;
+    display: inline-block;
+    margin-bottom: 5px;
 }
 
 .image-grid img {
-    max-width: 100%;
+    width: 100%;
+    height: auto;
     border-radius: 5px;
     cursor: pointer;
     display: block;
 }
+
 
 .image-grid img:hover {
     border: 2px solid #460048;
@@ -765,10 +766,9 @@ legend{
     }
 
     .image-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 5px;
+        column-count: 3;
     }
+
 
     /* ----------------- FOOTER ------------------------------ */
     .footer-container {
@@ -796,6 +796,12 @@ legend{
 
     .footer-left p {
         margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-grid {
+        column-count: 2;
     }
 }
 
