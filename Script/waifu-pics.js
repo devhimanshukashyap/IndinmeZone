@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function displayImages(images) {
         console.log('Displaying images:', images);
         imageGrid.innerHTML = '';
-        images.slice(0, 15).forEach(url => {
+        images.slice(0, 19).forEach(url => {
             let img = document.createElement('img');
             img.src = url;
             img.alt = 'Anime Image';

@@ -31,7 +31,7 @@ nav h2 a {
 }
 
 nav h2 a:hover {
-    color: #3d3c3d;
+    color: #e3007d;
     transform: scale(1.1);
 }
 
@@ -72,10 +72,10 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: rgba(0, 0, 0, 0.845);
-    text-shadow: rgb(127, 127, 127) 0 0 5px;
+    color: rgba(239, 3, 156, 0.845);
+    text-shadow: rgb(92, 0, 44) 0 0 5px;
     text-decoration: underline;
-    text-decoration-color: rgb(52, 52, 52);
+    text-decoration-color: rgb(62, 0, 37);
     transition: all 0.3s ease;
 }
 
@@ -101,15 +101,15 @@ nav ul li a:hover {
 #filterBtn {
     padding: 8px 20px;
     margin: 10px;
-    background-color: #333;
+    background-color: #c4007c;
     color: white;
     border: none;
     cursor: pointer;
-    border: 1px solid white;
+    border: 1px solid #d5d5d5;
 }
 
 #filterBtn:hover {
-    background-color: #555;
+    background-color: #800051;
 }
 
 #refreshBtn {
@@ -117,7 +117,7 @@ nav ul li a:hover {
     bottom: 10px;
     right: 10px;
     padding: 10px 20px;
-    background-color: #333;
+    background-color: #e302aa;
     color: white;
     border: none;
     cursor: pointer;
@@ -125,26 +125,26 @@ nav ul li a:hover {
 }
 
 #refreshBtn:hover {
-    background-color: #555;
+    background-color: #890067;
 }
 
 #image-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 10px;
-    justify-items: center;
+    column-count: 4;
+    column-gap: 10px;
 }
 
 #image-grid img {
-    max-width: 100%;
-    border-radius: 5px;
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+    margin-bottom: 10px;
     cursor: pointer;
     display: block;
 }
 
 #image-grid img:hover {
-    outline: 2px solid #460048;
-    box-shadow: 1px 2px 6px white;
+    outline: 2px solid #a6005e;
+    box-shadow: 1px 2px 6px rgb(255, 2, 183);
 }
 
 .hidden {
@@ -157,10 +157,12 @@ nav ul li a:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #222;
+    background-color: #b04ea0;
     padding: 20px;
-    border: 1px solid #444;
+    border: 1px solid #5b0047;
     text-align: center;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 }
 
 .filterContent,
@@ -178,7 +180,7 @@ nav ul li a:hover {
 }
 
 .warningContent {
-    color: #f00;
+    color: rgb(175, 0, 0);
 }
 
 .anime-news-flex legend {
@@ -360,9 +362,7 @@ nav ul li a:hover {
     }
 
     #image-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-        gap: 5px;
+        column-count: 3;
     }
 
     /* ----------------- FOOTER ------------------------------ */
@@ -391,6 +391,12 @@ nav ul li a:hover {
 
     .footer-left p {
         margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-grid {
+        column-count: 2;
     }
 }
 
