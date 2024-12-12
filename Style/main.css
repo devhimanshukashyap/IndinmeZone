@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins';
+    transition: all linear 0.3ms;
 }
 
 :root {
@@ -459,7 +460,6 @@ legend {
     height: auto;
     border-radius: 5px;
     cursor: pointer;
-    display: block;
 }
 
 
