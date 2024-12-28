@@ -36,7 +36,7 @@ body {
     width: 25px;
     border-radius: 50%;
     mix-blend-mode: difference;
-    background-color: white;
+    background-color: transparent;
     opacity: 0.7;
     transform: translate(-50%, -50%);
     pointer-events: none;
