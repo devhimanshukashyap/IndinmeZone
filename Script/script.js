@@ -19,6 +19,38 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// ------------------------- Custom Cursor ----------------
+const cursor = document.querySelector('#cursor')
+const body = document.querySelector('body')
+
+body.addEventListener('mousemove',(crsr) =>{
+    cursor.style.left = crsr.x + 'px'
+    cursor.style.top = crsr.y + 'px'
+})
+
+document.addEventListener('mousemove', (e) => {
+    const trail = document.createElement('div');
+    trail.className = 'trail';
+    trail.style.left = `${e.clientX}px`;
+    trail.style.top = `${e.clientY}px`;
+    document.body.appendChild(trail);
+    setTimeout(() => trail.remove(), 500);
+  });
+
+// Select all elements containing text
+document.querySelectorAll('*').forEach((element) => {
+    element.addEventListener('mouseenter', () => {
+      if (element.innerText.trim() !== '') {
+        cursor.style.transform = 'scale(1.2)';
+        cursor.style.transition = 'transform 0.3s ease';
+      }
+    });
+  
+    element.addEventListener('mouseleave', () => {
+      cursor.style.transform = 'scale(1)';
+    });
+  });
+
 // ---------------------------- FOR TEXT ANIMATION ---------------
 
 document.addEventListener("DOMContentLoaded", () => {
